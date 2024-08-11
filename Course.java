@@ -7,8 +7,8 @@ class Course {
 
 
     Course( String courseName, String instructor){
-        this.courseName = courseName;
-        this.instructor = instructor;
+        setCourseName(courseName);
+        setInstructor(instructor);
     }
 
 
@@ -18,22 +18,18 @@ class Course {
         return courseId;
     }
 
-    public void setCourseId(){
-        this.courseId = courseId;
-    }
-
     public String getCourseName(){
         return courseName;
     }
 
-    public void setCourseName(){
+    public void setCourseName(String courseName){
         this.courseName = courseName;
     }
     public String getInstructor(){
         return instructor;
     }
 
-    public void setInstructor(){
+    public void setInstructor(String instructor){
         this.instructor = instructor;
     }
 }

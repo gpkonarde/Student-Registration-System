@@ -7,37 +7,39 @@ class Student {
     private int cId;
 
     Student(String stdName, int age, String email, int cId){
-        this.stdName = stdName;
-        this.age = age;
-        this.email = email;
-        this.cId = cId;
+        setStdName(stdName);
+        setAge(age);
+        setEmail(email);
+        setCourseId(cId);
     }
-    
     //  Getters and settrs 
-    
+
     public int getStdId(){
         return stdId;
     }
     public String getStdName(){
         return stdName;
     }
-    public void setStdName(){
+    public void setStdName(String stdName){
         this.stdName = stdName;
     }
     public int getAge(){
         return age;
     }
-    public void setAge(){
+    public void setAge(int age){
         this.age = age;
     }
     public String getEmail(){
         return email;
     }
-    public void setEmail(){
+    public void setEmail(String email){
         this.email = email;
     }
     public int getCourseId(){
         return cId;
+    }
+    public void setCourseId(int cId){
+        this.cId = cId;
     }
 
 }
