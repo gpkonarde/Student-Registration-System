@@ -11,6 +11,9 @@ class Course {
         this.instructor = instructor;
     }
 
+
+    // Getters and Setters
+    
     public int getCourseId(){
         return courseId;
     }

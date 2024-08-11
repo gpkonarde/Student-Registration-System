@@ -13,6 +13,8 @@ class Student {
         this.cId = cId;
     }
     
+    //  Getters and settrs 
+    
     public int getStdId(){
         return stdId;
     }

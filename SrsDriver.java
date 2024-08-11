@@ -4,7 +4,7 @@ public class SrsDriver {
     public static void main(String[] args) {
 
         Student student = null;
-        Course course;
+        Course course = null;
 
         System.out.println("*** Welcome to Zingur Consultancy ***");
         System.out.println("1. Enroll as Student");

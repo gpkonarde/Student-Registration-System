@@ -36,6 +36,7 @@ public class SrsDb {
         }
     }
 
+    //  Db handling methods
     public static void createStudent(Statement stmt) {
         try {
             String create = "CREATE TABLE IF NOT EXISTS Student (" +
