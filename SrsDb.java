@@ -67,7 +67,6 @@ public class SrsDb {
                     "UNIQUE(iEmail)" +
                     ");";
             stmt.execute(create);
-            System.out.println("Instructor table created successfully");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -104,13 +103,12 @@ public class SrsDb {
     }
 
     public static void addCourse(Course course) {
-        String insert = "INSERT INTO Course (cName, Instructor) VALUES (?, ?)";
+        String insert = "INSERT INTO Course (cName) VALUES (?)";
 
         try (Connection con = DriverManager.getConnection(url, username, password);
                 PreparedStatement pstmt = con.prepareStatement(insert)) {
 
             pstmt.setString(1, course.getCourseName());
-            pstmt.setString(2, course.getInstructor());
 
             pstmt.executeUpdate();
         } catch (Exception e) {
@@ -130,6 +128,39 @@ public class SrsDb {
             pstmt.setInt(4, student.getCourseId());
 
             pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void addInstructor(Instructor instructor) {
+        String insert = "INSERT into instructor (iName , iEmail) Values (? , ?)";
+
+        try (Connection con = DriverManager.getConnection(url, username, password);
+                PreparedStatement pstmt = con.prepareStatement(insert)) {
+
+            pstmt.setString(1, instructor.getInstructorName());
+            pstmt.setString(2, instructor.getInstructorEmail());
+            pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void enrollStudent(EnrollmentManager manager, int studentId, int courseId, int instructorId) {
+        String insert = "Insert into Enrollment (sId, cId, enrollmentDate) Values(?, ?, ?)";
+
+        try (Connection con = DriverManager.getConnection(url, username, password);
+                PreparedStatement pstmt = con.prepareStatement(insert)) {
+
+            pstmt.setInt(1, studentId);
+            pstmt.setInt(2, courseId);
+            pstmt.setString(3, manager.getEnrollmentDate());
+            pstmt.executeUpdate();
+            System.out.println("Enrolling student with ID: " + studentId + ", course ID: " + courseId
+                    + ", enrollment date: " + manager.getEnrollmentDate());
+            System.out.println("Student enrolled");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
