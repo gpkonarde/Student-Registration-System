@@ -80,8 +80,4 @@ public class EnrollmentManager {
         }
     }
 
-    public static void enrollStudent(EnrollmentManager manager, int studentId, int courseId, int instructorId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'enrollStudent'");
-    }
 }

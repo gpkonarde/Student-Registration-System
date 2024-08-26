@@ -97,6 +97,7 @@ public class SrsDriver {
                     System.exit(0);
                     break;
                 default:
+                    sc.close();
                     System.out.println("Invalid Input!");
                     break;
             }
